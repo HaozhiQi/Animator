@@ -65,6 +65,9 @@ public:
 	// Returns animating flag
 	bool Animating();
 
+	//rigid body
+	bool rb();
+
 	//IK
 	bool IK();
 	//CUSTOM: Get increment the slider

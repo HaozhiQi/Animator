@@ -13,7 +13,7 @@ class ModelerUIWindows {open
       label {CS 341 Animator (Sp02)} open
       xywh {502 103 589 705} color 185 labeltype NORMAL_LABEL when 0 visible
     } {
-      Fl_Menu_Bar m_pmbMenuBar {selected
+      Fl_Menu_Bar m_pmbMenuBar {
         xywh {0 0 590 25} selection_color 137 labelsize 12 textsize 12
       } {
         submenu {} {
@@ -211,12 +211,12 @@ class ModelerUIWindows {open
             Fl_Light_Button m_pbtSimulate {
               label {&Simulate}
               user_data this
-              xywh {335 580 70 20} labelsize 12
+              xywh {300 580 70 20} labelsize 12
             }
             Fl_Value_Slider m_psldrFPS {
               label FPS
               user_data this
-              xywh {470 580 100 20} type {Horz Knob} labelsize 12 align 4 minimum 5 maximum 30 step 1 value 30 resizable
+              xywh {480 580 100 20} type {Horz Knob} labelsize 12 align 4 minimum 5 maximum 30 step 1 value 30 resizable
             }
             Fl_Box {} {
               label {Playback Controls}
@@ -231,6 +231,11 @@ class ModelerUIWindows {open
               label AngleLimit
               user_data this
               xywh {305 555 85 20} labelsize 12
+            }
+            Fl_Light_Button m_pbtRigidBody {
+              label {Rigid Body}
+              user_data this selected
+              xywh {370 580 80 20} labelsize 12
             }
           }
           Fl_Group m_pwndIndicatorWnd {

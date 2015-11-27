@@ -33,6 +33,7 @@ enum ModelNames
 	RIGHTKNEE,
 	RIGHTLOWERLEG,
 	RIGHTFOOT,
+	RIGHTTHRUSTER,
 	HEADCONSTRAINT,
 	LHANDCONSTRAINT,
 	RHANDCONSTRAINT,
@@ -66,6 +67,24 @@ enum ModelControls
 	ZPOS, 
 	HEIGHT, 
 	ROTATE,
+	// Subdivision control part
+	DIVISION_LEVEL,
+	DIVISION_CONTROL1,
+	DIVISION_CONTROL2,
+	DIVISION_CONTROL3,
+	DIVISION_CONTROL4,
+	// Particle Source Control
+	PS_EMIT_1,
+	PS_NUM_1,
+	PS_ANGLE_1,
+	PS_EMIT_2,
+	PS_NUM_2,
+	PS_ANGLE_2,
+	PS_EMIT_3,
+	PS_NUM_3,
+	PS_ANGLE_3,
+	PS_LIFE,
+	PS_GRAVITY,
 	//Inverse Kinematics Constraints
 	HEAD_CSTRN_X,
 	HEAD_CSTRN_Y,
@@ -105,12 +124,6 @@ enum ModelControls
 	//upperarm rotation
 	LEFT_UARM_ROTATE,
 	RIGHT_UARM_ROTATE,
-	// Subdivision control part
-	DIVISION_LEVEL,
-	DIVISION_CONTROL1,
-	DIVISION_CONTROL2,
-	DIVISION_CONTROL3,
-	DIVISION_CONTROL4,
 	//Make sure this stays at the last
 	NUMCONTROLS
 };

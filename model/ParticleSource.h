@@ -39,7 +39,7 @@ class ParticleSource : public Model
 	Vec3d m_lastPos;
 	float m_lastTime;
 	Vec3d m_velocity; //velocity of particle source in world coordinate
-
+	bool m_emit;
 public:
 	ParticleSource(ModelNames name) : Model(name), m_angle(30), m_minSpeed(5.0), m_maxSpeed(10.0), m_initialLife(3.0), m_numParticles(5), m_velocity(0, 0, 0), m_lastPos(0, 0, 0), m_lastTime(9999999999)
 	{}
@@ -60,6 +60,9 @@ public:
 	}
 	void setInitialLife(double initialLife) {
 		m_initialLife = initialLife;
+	}
+	void setEmit(bool emit) {
+		m_emit = emit;
 	}
 
 	//does nothing here

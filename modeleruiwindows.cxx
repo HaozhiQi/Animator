@@ -161,11 +161,11 @@ ModelerUIWindows::ModelerUIWindows() {
             o->labelsize(12);
             o->user_data((void*)(this));
           }
-          { Fl_Light_Button* o = m_pbtSimulate = new Fl_Light_Button(335, 580, 70, 20, "&Simulate");
+          { Fl_Light_Button* o = m_pbtSimulate = new Fl_Light_Button(300, 580, 70, 20, "&Simulate");
             o->labelsize(12);
             o->user_data((void*)(this));
           }
-          { Fl_Value_Slider* o = m_psldrFPS = new Fl_Value_Slider(470, 580, 100, 20, "FPS");
+          { Fl_Value_Slider* o = m_psldrFPS = new Fl_Value_Slider(480, 580, 100, 20, "FPS");
             o->type(5);
             o->labelsize(12);
             o->minimum(5);
@@ -185,6 +185,10 @@ ModelerUIWindows::ModelerUIWindows() {
             o->user_data((void*)(this));
           }
           { Fl_Light_Button* o = m_pbtAngleLimit = new Fl_Light_Button(305, 555, 85, 20, "AngleLimit");
+            o->labelsize(12);
+            o->user_data((void*)(this));
+          }
+          { Fl_Light_Button* o = m_pbtRigidBody = new Fl_Light_Button(370, 580, 80, 20, "Rigid Body");
             o->labelsize(12);
             o->user_data((void*)(this));
           }

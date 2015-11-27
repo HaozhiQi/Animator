@@ -88,6 +88,24 @@ int main()
 	controls[DIVISION_CONTROL3] = ModelerControl("Division Control3", 0, 2, 0.2, 1);
 	controls[DIVISION_CONTROL4] = ModelerControl("Division Control4", 0, 2, 0.2, 1);
 
+	//particle source controls
+
+	controls[PS_EMIT_1] = ModelerControl("PS_EMIT_1", 0, 1, 0.1, 1);
+	controls[PS_NUM_1] = ModelerControl("PS_NUM_1", 0, 5, 1, 1);
+	controls[PS_ANGLE_1] = ModelerControl("PS_ANGLE_1", 0, 180, 1, 10);
+	
+	controls[PS_EMIT_2] = ModelerControl("PS_EMIT_2", 0, 1, 0.1, 1);
+	controls[PS_NUM_2] = ModelerControl("PS_NUM_2", 0, 5, 1, 1);
+	controls[PS_ANGLE_2] = ModelerControl("PS_ANGLE_2", 0, 180, 1, 10);
+	
+	controls[PS_EMIT_3] = ModelerControl("PS_EMIT_3", 0, 1, 0.1, 1);
+	controls[PS_NUM_3] = ModelerControl("PS_NUM_3", 0, 5, 1, 1);
+	controls[PS_ANGLE_3] = ModelerControl("PS_ANGLE_3", 0, 180, 1, 10);
+
+	controls[PS_LIFE] = ModelerControl("PS_LIFE", 0, 10.0, 0.1, 3.0);
+
+	controls[PS_GRAVITY] = ModelerControl("PS_GRAVITY", 0, 20, 1, 10);
+
 
     ModelerApplication::Instance()->Init(&createSampleModel, controls, NUMCONTROLS);
 	ModelerApplication::Instance()->SetParticleSystem(&ParticleSystem::Instance());

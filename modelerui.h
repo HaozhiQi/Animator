@@ -45,6 +45,7 @@ public:
 	void fps(int fps);
 	bool simulate() const;
 	void simulate(bool bSimulate);
+	bool rb() const;
 	bool IK() const; //tell if I'm currently in IK mode
 	bool isDOF(int iControl) const; //tell if the given control is a degree of freedom.
 	bool isAngleLimit() const;

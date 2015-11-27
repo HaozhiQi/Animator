@@ -862,6 +862,13 @@ void ModelerUI::simulate(bool bSimulate)
 	}
 }
 
+bool ModelerUI::rb() const
+{
+	if (m_pbtRigidBody->value())
+		return true;
+	return false;
+}
+
 //tell if currently is in IK mode
 bool ModelerUI::IK() const
 {

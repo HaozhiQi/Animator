@@ -135,6 +135,12 @@ MengMei::MengMei() :Model(MENGMEI)
 						static ParticleSource leftThruster(LEFTTHRUSTER);
 						leftFoot.addChild(&leftThruster);
 						ParticleSystem::Instance().addParticleSource(&leftThruster);
+						leftThruster.m_beforeDraw = [](Model* self) {
+							((ParticleSource*)self)->setAngle(VAL(PS_ANGLE_1));
+							((ParticleSource*)self)->setEmit(VAL(PS_EMIT_1) > 0.5);
+							((ParticleSource*)self)->setNumParticles(VAL(PS_NUM_1));
+							((ParticleSource*)self)->setInitialLife(VAL(PS_LIFE));
+						};
 				leftLowerLeg.addChild(&leftFoot);
 
 			leftKnee.addChild(&leftLowerLeg);
@@ -180,6 +186,16 @@ MengMei::MengMei() :Model(MENGMEI)
 						//self->getController()->setRotateY(VAL(RIGHT_FOOT_UD));
 						self->getController()->setRotateZ(VAL(RIGHT_FOOT_LR));
 					};
+
+						static ParticleSource rightThruster(RIGHTTHRUSTER);
+						rightFoot.addChild(&rightThruster);
+						ParticleSystem::Instance().addParticleSource(&rightThruster);
+						rightThruster.m_beforeDraw = [](Model* self) {
+							((ParticleSource*)self)->setAngle(VAL(PS_ANGLE_2));
+							((ParticleSource*)self)->setEmit(VAL(PS_EMIT_2) > 0.5);
+							((ParticleSource*)self)->setNumParticles(VAL(PS_NUM_2));
+							((ParticleSource*)self)->setInitialLife(VAL(PS_LIFE));
+						};
 
 				rightLowerLeg.addChild(&rightFoot);
 

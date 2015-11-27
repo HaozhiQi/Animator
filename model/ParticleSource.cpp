@@ -4,6 +4,7 @@
 #define PI 3.14159265358979
 
 void ParticleSource::newParticles(Particles& particles) {
+	if (!m_emit) return;
 	//initialize the particles
 	for (int i = 0; i < m_numParticles; ++i) {
 		Particle particle;

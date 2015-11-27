@@ -179,6 +179,11 @@ bool ModelerApplication::Animating()
 	return m_animating;
 }
 
+bool ModelerApplication::rb()
+{
+	return m_ui->rb();
+}
+
 bool ModelerApplication::IK()
 {
 	return m_ui->IK();

@@ -63,6 +63,7 @@ public:
   Fl_Value_Slider *m_psldrFPS;
   Fl_Light_Button *m_pbtIK;
   Fl_Light_Button *m_pbtAngleLimit;
+  Fl_Light_Button *m_pbtRigidBody;
   IndicatorWindow *m_pwndIndicatorWnd;
   Fl_Slider *m_psldrTimeSlider;
   Fl_Slider *m_psldrPlayStart;
