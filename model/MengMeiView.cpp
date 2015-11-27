@@ -89,8 +89,8 @@ void MengMeiView::onLighting()
 	GLfloat pos1[] = { VAL(LIGHT1_X), VAL(LIGHT1_Y), VAL(LIGHT1_Z), 0.0f };
 	GLfloat diffuse1[] = { VAL(LIGHT1_R), VAL(LIGHT1_G), VAL(LIGHT1_B) };
 
-	glLightfv(GL_LIGHT0, GL_POSITION, pos0);
-	glLightfv(GL_LIGHT0, GL_DIFFUSE, diffuse0);
+	//glLightfv(GL_LIGHT0, GL_POSITION, pos0);
+	//glLightfv(GL_LIGHT0, GL_DIFFUSE, diffuse0);
 	glLightfv(GL_LIGHT1, GL_POSITION, pos1);
 	glLightfv(GL_LIGHT1, GL_DIFFUSE, diffuse1);
 }

@@ -23,7 +23,7 @@ class ObjFile
 public:
 
 	ObjFile(std::string file);
-	GLuint createModel(bool flat = false);
+	GLuint createModel(bool flat = false, bool cartoon = false);
 	void findAdjTriangles();
 	void subdivide();
 	void computeNormals();

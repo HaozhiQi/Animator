@@ -75,11 +75,13 @@ void ObjFile::defineUserControl(double a, double b, double c, double d)
 }
 
 
-GLuint ObjFile::createModel(bool flat)
+GLuint ObjFile::createModel(bool flat, bool cartoon)
 {
 	glBegin(GL_TRIANGLES);
-	Vec3f lightdir = Vec3f(VAL(LIGHT0_X), VAL(LIGHT0_Y), VAL(LIGHT0_Z));
 
+	Vec3f lightdir = Vec3f(VAL(LIGHT1_X), VAL(LIGHT1_Y), VAL(LIGHT1_Z));
+	GLfloat pos1[] = { VAL(LIGHT1_X), VAL(LIGHT1_Y), VAL(LIGHT1_Z), 0.0f };
+	GLfloat diffuse1[] = { VAL(LIGHT1_R), VAL(LIGHT1_G), VAL(LIGHT1_B) };
 	
 	for (vector<Triangle>::const_iterator it = triangles_.begin(); it != triangles_.end(); ++it)
 	{
@@ -95,17 +97,30 @@ GLuint ObjFile::createModel(bool flat)
 			else
 			{
 				normals_[k].normalize(); lightdir.normalize();
-				float intensity = normals_[k] * lightdir;
-				//cout << intensity << endl;
-				if (intensity > 0.95)
-					setDiffuseColor(1.0, 0.5, 0.5);
-				else if (intensity > 0.5)
-					setDiffuseColor(0.6, 0.3, 0.3);
-				else if (intensity > 0.25)
-					setDiffuseColor(0.4, 0.2, 0.2);
-				else
-					setDiffuseColor(0.2, 0.1, 0.1);
-
+				if (cartoon) {
+					float intensity = normals_[k] * lightdir;
+					intensity += 1;
+					intensity /= 2;
+					cout << intensity << endl;
+					if (intensity > 0.95)
+					{
+						diffuse1[0] = 0.9; diffuse1[1] = 0.9; diffuse1[2] = 0.9;
+					}
+					else if (intensity > 0.5)
+					{
+						diffuse1[0] = 0.5; diffuse1[1] = 0.5; diffuse1[2] = 0.5;
+					}
+					else if (intensity > 0.25)
+					{
+						diffuse1[0] = 0.5; diffuse1[1] = 0.5; diffuse1[2] = 0.5;
+					}
+					else
+					{
+						diffuse1[0] = 0.1; diffuse1[1] = 0.1; diffuse1[2] = 0.1;
+					}
+					glLightfv(GL_LIGHT1, GL_POSITION, pos1);
+					glLightfv(GL_LIGHT1, GL_DIFFUSE, diffuse1);
+				}
 				glNormal3fv((float*) &normals_[it->n[k]]);
 			}
 			glVertex3fv((float*)&vertices_[it->v[k]]);

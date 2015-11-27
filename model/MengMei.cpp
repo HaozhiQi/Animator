@@ -313,9 +313,9 @@ void MengMei::onDraw()
 void MengMei::createSubDivision()
 {
 	
-	glDisable(GL_LIGHT0);
-	glDisable(GL_LIGHT1);
-	glDisable(GL_LIGHTING);
+	//glDisable(GL_LIGHT0);
+	//glDisable(GL_LIGHT1);
+	//glDisable(GL_LIGHTING);
 
 	glPushMatrix();
 
@@ -336,7 +336,7 @@ void MengMei::createSubDivision()
 		{
 			objFile->subdivide();
 		}
-		objFile->createModel(false);
+		objFile->createModel(false, true);
 	}
 	printf("Vertices %d\n", objFile->vertices_.size());
 	delete objFile;
@@ -364,12 +364,12 @@ void MengMei::createSubDivision()
 		}
 		objFile2->createModel(false);
 	}
-	printf("Vertices %d\n", objFile2->vertices_.size());
+	// printf("Vertices %d\n", objFile2->vertices_.size());
 	delete objFile2;
 
 
-	glEnable(GL_LIGHTING);
-	glEnable(GL_LIGHT0);
-	glEnable(GL_LIGHT1);
+	//glEnable(GL_LIGHTING);
+	//glEnable(GL_LIGHT0);
+	//glEnable(GL_LIGHT1);
 	glPopMatrix();
 }
