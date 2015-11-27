@@ -17,6 +17,7 @@ class MengMei : public Model
 public:
 	MengMei();
 	void onDraw();
+	void createSubDivision();
 };
 
 #endif

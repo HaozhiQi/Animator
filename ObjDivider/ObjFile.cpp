@@ -10,6 +10,9 @@
 */
 
 #include "ObjFile.h"
+#include "../modelerglobals.h"
+#include "../modelerapp.h"
+#include "../modelerdraw.h"
 #include <fstream>
 #include <iostream>
 #include <string>
@@ -75,7 +78,9 @@ void ObjFile::defineUserControl(double a, double b, double c, double d)
 GLuint ObjFile::createModel(bool flat)
 {
 	glBegin(GL_TRIANGLES);
+	Vec3f lightdir = Vec3f(VAL(LIGHT0_X), VAL(LIGHT0_Y), VAL(LIGHT0_Z));
 
+	
 	for (vector<Triangle>::const_iterator it = triangles_.begin(); it != triangles_.end(); ++it)
 	{
 		for (int k = 0; k < 3; ++k)
@@ -89,6 +94,18 @@ GLuint ObjFile::createModel(bool flat)
 			}
 			else
 			{
+				normals_[k].normalize(); lightdir.normalize();
+				float intensity = normals_[k] * lightdir;
+				//cout << intensity << endl;
+				if (intensity > 0.95)
+					setDiffuseColor(1.0, 0.5, 0.5);
+				else if (intensity > 0.5)
+					setDiffuseColor(0.6, 0.3, 0.3);
+				else if (intensity > 0.25)
+					setDiffuseColor(0.4, 0.2, 0.2);
+				else
+					setDiffuseColor(0.2, 0.1, 0.1);
+
 				glNormal3fv((float*) &normals_[it->n[k]]);
 			}
 			glVertex3fv((float*)&vertices_[it->v[k]]);
