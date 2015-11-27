@@ -261,8 +261,6 @@ void MengMei::onDraw()
 	drawSphere(0.8f);
 	glPopMatrix();
 
-	createSubDivision();
-
 	//delete mb;
 	glPushMatrix();
 	glTranslatef(0.5f, -0.25f, 0.0f);
@@ -324,15 +322,11 @@ void MengMei::onDraw()
 	setDiffuseColor(1.0f, 1.0f, 1.0f);
 #endif
 	glPopMatrix();
+	createSubDivision();
 }
 
 void MengMei::createSubDivision()
 {
-	
-	glDisable(GL_LIGHT0);
-	glDisable(GL_LIGHT1);
-	glDisable(GL_LIGHTING);
-
 	glPushMatrix();
 
 	glTranslatef(4.5f, 5.0f, 0.0f);
@@ -354,7 +348,6 @@ void MengMei::createSubDivision()
 		}
 		objFile->createModel(false);
 	}
-	printf("Vertices %d\n", objFile->vertices_.size());
 	delete objFile;
 
 	glPopMatrix();
@@ -380,12 +373,6 @@ void MengMei::createSubDivision()
 		}
 		objFile2->createModel(false);
 	}
-	printf("Vertices %d\n", objFile2->vertices_.size());
 	delete objFile2;
-
-
-	glEnable(GL_LIGHTING);
-	glEnable(GL_LIGHT0);
-	glEnable(GL_LIGHT1);
 	glPopMatrix();
 }
