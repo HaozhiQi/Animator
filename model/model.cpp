@@ -149,9 +149,9 @@ Mat4d Model::getTransMatrix() {
 }
 
 Model::~Model()
-{
+{/*
 	for (Model* m : m_children)
 	{
 		delete m;
-	}
+	}*/
 }
