@@ -78,7 +78,13 @@ void ObjFile::defineUserControl(double a, double b, double c, double d)
 GLuint ObjFile::createModel(bool flat)
 {
 	glBegin(GL_TRIANGLES);
+
 	
+
+	GLfloat pos1[] = { VAL(LIGHT1_X), VAL(LIGHT1_Y), VAL(LIGHT1_Z), 0.0f };
+	GLfloat diffuse1[] = { VAL(LIGHT1_R), VAL(LIGHT1_G), VAL(LIGHT1_B) };
+	glLightfv(GL_LIGHT1, GL_POSITION, pos1);
+	glLightfv(GL_LIGHT1, GL_DIFFUSE, diffuse1);
 	for (vector<Triangle>::const_iterator it = triangles_.begin(); it != triangles_.end(); ++it)
 	{
 		for (int k = 0; k < 3; ++k)
@@ -98,7 +104,6 @@ GLuint ObjFile::createModel(bool flat)
 			glVertex3fv((float*)&vertices_[it->v[k]]);
 		}
 	}
-
 	glEnd();
 	return 1;
 }

@@ -321,12 +321,19 @@ void MengMei::onDraw()
 
 	setDiffuseColor(1.0f, 1.0f, 1.0f);
 #endif
+
 	glPopMatrix();
+	glDisable(GL_LIGHT0);
+	glEnable(GL_LIGHT1);
 	createSubDivision();
+
+	glDisable(GL_LIGHT1);
+	glEnable(GL_LIGHT0);
 }
 
 void MengMei::createSubDivision()
 {
+	
 	glPushMatrix();
 
 	glTranslatef(4.5f, 5.0f, 0.0f);
@@ -375,4 +382,5 @@ void MengMei::createSubDivision()
 	}
 	delete objFile2;
 	glPopMatrix();
+
 }

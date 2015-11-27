@@ -25,14 +25,14 @@ int main()
     ModelerControl controls[NUMCONTROLS];
 	controls[LIGHT0_X] = ModelerControl("Light0 X", -5, 5, 0.1, -5.0f);
 	controls[LIGHT0_Y] = ModelerControl("Light0 Y", -5, 5, 0.1, -2.0);
-	controls[LIGHT0_Z] = ModelerControl("Light0 Z", -5, 5, 0.1, -4.0);
+	controls[LIGHT0_Z] = ModelerControl("Light0 Z", -5, 5, 0.1, 0.0);
 	controls[LIGHT0_R] = ModelerControl("Light0 R", 0.0f, 1.0f, 0.1f, 1.0f);
 	controls[LIGHT0_G] = ModelerControl("Light0 G", 0.0f, 1.0f, 0.1f, 1.0f);
 	controls[LIGHT0_B] = ModelerControl("Light0 B", 0.0f, 1.0f, 0.1f, 1.0f);
 
-	controls[LIGHT1_X] = ModelerControl("Light1 X", -5.0f, 5.0f, 0.1f, 4.0f);
-	controls[LIGHT1_Y] = ModelerControl("Light1 Y", -5.0f, 5.0f, 0.1f, 1.0f);
-	controls[LIGHT1_Z] = ModelerControl("Light1 Z", -5.0f, 5.0f, 0.1f, 5.0f);
+	controls[LIGHT1_X] = ModelerControl("Light1 X", -5.0f, 5.0f, 0.1f, -5.0f);
+	controls[LIGHT1_Y] = ModelerControl("Light1 Y", -5.0f, 5.0f, 0.1f, -2.0f);
+	controls[LIGHT1_Z] = ModelerControl("Light1 Z", -5.0f, 5.0f, 0.1f, 0.0f);
 	controls[LIGHT1_R] = ModelerControl("Light1 R", 0.0f, 1.0f, 0.1f, 1.0f);
 	controls[LIGHT1_G] = ModelerControl("Light1 G", 0.0f, 1.0f, 0.1f, 1.0f);
 	controls[LIGHT1_B] = ModelerControl("Light1 B", 0.0f, 1.0f, 0.1f, 1.0f);
