@@ -147,7 +147,20 @@ void ParticleSystem::computeForcesAndUpdateParticles(float t)
 							particle.position[1] = 2 * m_groundY - particle.position[1];
 							particle.velocity[1] = -particle.velocity[1];
 						}
-						else {
+						else if (ModelerApplication::Instance()->flock()) {
+							//steer towards the average of neighbors
+							double radius = 1.5;
+							Vec3d avgV;
+							int count = 0;
+							for (auto par : m_cache[frame]) {
+								if ((par.position - particle.position).length2() < radius * radius) {
+									++count;
+									avgV += par.velocity;
+								}
+							}
+							avgV /= count;
+							particle.velocity = 0.5 * avgV + 0.5 * particle.velocity;
+						} else {
 							particle.velocity += m_gravity * delta_t;
 						}
 					}

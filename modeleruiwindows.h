@@ -64,6 +64,7 @@ public:
   Fl_Light_Button *m_pbtIK;
   Fl_Light_Button *m_pbtAngleLimit;
   Fl_Light_Button *m_pbtRigidBody;
+  Fl_Light_Button *m_pbtFlock;
   IndicatorWindow *m_pwndIndicatorWnd;
   Fl_Slider *m_psldrTimeSlider;
   Fl_Slider *m_psldrPlayStart;

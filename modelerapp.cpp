@@ -184,6 +184,11 @@ bool ModelerApplication::rb()
 	return m_ui->rb();
 }
 
+bool ModelerApplication::flock()
+{
+	return m_ui->flock();
+}
+
 bool ModelerApplication::IK()
 {
 	return m_ui->IK();

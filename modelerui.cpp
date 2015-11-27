@@ -869,6 +869,13 @@ bool ModelerUI::rb() const
 	return false;
 }
 
+bool ModelerUI::flock() const
+{
+	if (m_pbtFlock->value())
+		return true;
+	return false;
+}
+
 //tell if currently is in IK mode
 bool ModelerUI::IK() const
 {

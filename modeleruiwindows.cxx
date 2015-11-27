@@ -192,6 +192,9 @@ ModelerUIWindows::ModelerUIWindows() {
             o->labelsize(12);
             o->user_data((void*)(this));
           }
+          { Fl_Light_Button* o = m_pbtFlock = new Fl_Light_Button(405, 555, 65, 20, "Flock");
+            o->user_data((void*)(this));
+          }
           o->end();
         }
         { IndicatorWindow* o = m_pwndIndicatorWnd = new IndicatorWindow(190, 610, 375, 20);

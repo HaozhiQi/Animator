@@ -68,6 +68,9 @@ public:
 	//rigid body
 	bool rb();
 
+	//flock behavior
+	bool flock();
+
 	//IK
 	bool IK();
 	//CUSTOM: Get increment the slider

@@ -234,8 +234,13 @@ class ModelerUIWindows {open
             }
             Fl_Light_Button m_pbtRigidBody {
               label {Rigid Body}
-              user_data this selected
+              user_data this
               xywh {370 580 80 20} labelsize 12
+            }
+            Fl_Light_Button m_pbtFlock {
+              label Flock
+              user_data this selected
+              xywh {405 555 65 20}
             }
           }
           Fl_Group m_pwndIndicatorWnd {
